@@ -1,0 +1,10 @@
+<?php
+session_start();
+$_SESSION["red"]=$_POST["red"];
+if((!isset($_SESSION["red"]))||(!empty($_SESSION["red"]))||(!is_numeric($_SESSION["red"])))
+    $_SESSION["red"]=0;
+if((!isset($_SESSION["yellow"]))||(!empty($_SESSION["yellow"]))||(!is_numeric($_SESSION["red"])))
+$_SESSION["yellow"]=$_POST["yellow"];
+$_SESSION["blue"]=$_POST["blue"];
+$_SESSION["green"]=$_POST["green"];
+?>
