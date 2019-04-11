@@ -1,22 +1,29 @@
 <?php
 session_start();
-if ($_POST['submit']=="How many did I eat to date?"){
-    $_SESSION["red"]=$_POST["red"];
-    if((!isset($_SESSION["red"]))||(empty($_SESSION["red"]))||(!is_numeric($_SESSION["red"])))
-        $_SESSION["red"]=0;
-    $_SESSION["redTotal"]+=$_SESSION["red"];
-    $_SESSION["yellow"]=$_POST["yellow"];
-    if((!isset($_SESSION["yellow"]))||(empty($_SESSION["yellow"]))||(!is_numeric($_SESSION["yellow"])))
-        $_SESSION["yellow"]=0;
-    $_SESSION["yellowTotal"]+=$_SESSION["yellow"];
-    $_SESSION["blue"]=$_POST["blue"];
-    if((!isset($_SESSION["blue"]))||(empty($_SESSION["blue"]))||(!is_numeric($_SESSION["blue"])))
-        $_SESSION["blue"]=0;
-    $_SESSION["blueTotal"]+=$_SESSION["blue"];
-    $_SESSION["green"]=$_POST["green"];
-    if((!isset($_SESSION["green"]))||(empty($_SESSION["green"]))||(!is_numeric($_SESSION["green"])))
-        $_SESSION["green"]=0;
-    $_SESSION["greenTotal"]+=$_SESSION["green"];
+$_SESSION["redTotal"]=0;
+$_SESSION["yellowTotal"]=0;
+$_SESSION["blueTotal"]=0;
+$_SESSION["greenTotal"]=0;
+
+if (isset($_POST["submit"])){
+    if ($_POST["submit"]=="How many did I eat to date?"){
+
+        //$_SESSION["red"]=$_POST["red"];
+            $_SESSION["red"]=0;
+        $_SESSION["redTotal"]+=$_POST["red"];
+
+        //$_SESSION["yellow"]=$_POST["yellow"];
+            $_SESSION["yellow"]=0;
+        $_SESSION["yellowTotal"]+=$_POST["yellow"];
+
+        //$_SESSION["blue"]=$_POST["blue"];
+            $_SESSION["blue"]=0;
+        $_SESSION["blueTotal"]+=$_POST["blue"];
+
+        //$_SESSION["green"]=$_POST["green"];
+            $_SESSION["green"]=0;
+        $_SESSION["greenTotal"]+=$_POST["green"];
+    }
 }
 $_SESSION["sTotal"]=$_SESSION["redTotal"]+$_SESSION["yellowTotal"]+$_SESSION["blueTotal"]+$_SESSION["greenTotal"];
 ?>
